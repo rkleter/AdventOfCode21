@@ -1,11 +1,10 @@
-import java.io.File
 import java.lang.Math.*
 
 data class Point(val x:Int, val y:Int)
 data class Line(val from:Point, val to:Point)
 
 fun main() {
-    val inputLines = File("input5.txt").readLines()
+    val inputLines = readInput("Day05")
     val lines = parseLines(inputLines)
     val flatLinePoints = lines.map { line -> flatLinePoints(line)}.flatten()
     val gb = flatLinePoints.groupBy { p -> p }

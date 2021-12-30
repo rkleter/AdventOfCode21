@@ -1,4 +1,3 @@
-import java.io.File
 
 data class BoardCell(val r: Int, val c: Int, val num: Int, var marked: Boolean = false)
 
@@ -10,13 +9,13 @@ data class Board(val bn: Int, val dim: Int = 5) {
 data class WinningSolution(val b: Board, val n: Int)
 
 fun main() {
-    val lines = File("input4.txt").readLines()
+    val lines = readInput("Day04")
     val moves = parseMoves(lines)
     val boards = parseBoards(lines)
     val ws1 = play(moves, boards)
-    val answer1 = ws1!!.b.cells.filter { c -> !c.marked }.map { c -> c.num }.sum() * ws1!!.n
+    val answer1 = ws1!!.b.cells.filter { c -> !c.marked }.map { c -> c.num }.sum() * ws1.n
     val ws2 = play(moves, boards, false)
-    val answer2 = ws2!!.b.cells.filter { c -> !c.marked }.map { c -> c.num }.sum() * ws2!!.n
+    val answer2 = ws2!!.b.cells.filter { c -> !c.marked }.map { c -> c.num }.sum() * ws2.n
     println("Day 4: ${answer1}, ${answer2}")
 }
 

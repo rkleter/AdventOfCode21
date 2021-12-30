@@ -1,4 +1,3 @@
-import java.io.File
 
 data class Tracker(val bitIdx: Int, var ones: Int, var zeros: Int)
 
@@ -8,10 +7,10 @@ fun main() {
 }
 
 fun day3_b() {
-    val lines = File("input3.txt").readLines()
-    var ox = rating(lines, {t -> t.ones > t.zeros || t.ones == t.zeros}, '1', '0')
-    var co2 = rating(lines, {t -> t.zeros < t.ones || t.ones == t.zeros}, '0', '1')
-    val r = Integer.parseInt(ox.first(),2) * Integer.parseInt(co2.first(),2);
+    val lines = readInput("Day03")
+    val ox = rating(lines, {t -> t.ones > t.zeros || t.ones == t.zeros}, '1', '0')
+    val co2 = rating(lines, {t -> t.zeros < t.ones || t.ones == t.zeros}, '0', '1')
+    val r = Integer.parseInt(ox.first(),2) * Integer.parseInt(co2.first(),2)
     println("Day3_b: ${ox.first()}, ${co2.first()}, ${r}")
 }
 
@@ -31,7 +30,7 @@ private fun rating(lines: List<String>, f:(t:Tracker)->Boolean, c1: Char, c2: Ch
 }
 
 private fun day3_a() {
-    val lines = File("input3.txt").readLines()
+    val lines = readInput("Day03")
     val data = trackers(lines)
     data.reverse()
     var gamma = 0

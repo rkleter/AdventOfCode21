@@ -1,12 +1,10 @@
-import java.io.File
-
 fun main() {
     day2_a()
     day2_b()
 }
 
 fun day2_b() {
-    val lines = File("input2.txt").readLines()
+    val lines = readInput("Day02")
     var h = 0
     var m = 0
     var d = 0
@@ -23,7 +21,7 @@ fun day2_b() {
 }
 
 private fun day2_a() {
-    val lines = File("input2.txt").readLines()
+    val lines = readInput("Day02")
     var h = 0
     var d = 0
     lines.forEach { line ->

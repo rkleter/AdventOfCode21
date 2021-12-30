@@ -6,7 +6,7 @@ fun main() {
 }
 
 fun day1_b() {
-    val lines = File("input1.txt").readLines().map { line -> line.toInt()}
+    val lines = File("Day01.txt").readLines().map { line -> line.toInt()}
     var idx = 0
     var increased = 0
     while (idx < lines.size - 3) {
@@ -21,7 +21,7 @@ fun day1_b() {
 fun day1_a() {
     var lastDepth = -1
     var increased = 0
-    val lines = File("input1.txt").readLines().map { line -> line.toInt()}
+    val lines = File("Day01.txt").readLines().map { line -> line.toInt()}
     lines.forEach{ newDepth ->
         if (lastDepth > -1 && newDepth > lastDepth) {
             increased++

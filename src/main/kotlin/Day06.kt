@@ -1,8 +1,7 @@
-import java.io.File
 
 fun main() {
     val population = Array<Long>(9, {  i -> 0 })
-    val inputLines = File("input6.txt").readLines()
+    val inputLines = readInput("Day06")
     inputLines.first().split(',').map{ s -> s.toInt() }.forEach { d ->  population[d]++}
     val days = 256
     for (step in 1..days) {
